@@ -1,0 +1,130 @@
+.socials-wrapper {
+  z-index: 14;
+  position: absolute;
+  top: 90%;
+  left: 85%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+}
+
+/* Style the Un-order list by setting its list-style to none */
+.socials-wrapper ul {
+  list-style: none;
+}
+
+/* Style the list items inside the UL list, by setting its width, height and line-height 
+  and float them to left and set its border and border-radius.
+ */
+.socials-wrapper ul li {
+  width: 75px;
+  height: 75px;
+  line-height: 75px;
+  margin: 0 10px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 5px solid #D8E2DC;
+  float: left;
+  transition: all 0.2s ease;
+}
+
+/* Style the icons by setting its color and margin-top value to 20px 
+to align it properly */
+.socials-wrapper ul li .fa {
+  color: #D8E2DC;
+  margin-top: 20px;
+  transition: all 0.2s ease;
+}
+
+/* Now target the specific li classes for styling and use box-shadow effect to border and text-shadow effect
+  to icons for glowing effect and use transition property for smooth transition effect. */
+/*facebook*/
+.socials-wrapper ul li:hover.facebook {
+  border: 5px solid #b8ffbb;
+  box-shadow: 0 0 15px #b8ffbb;
+  transition: all 0.2s ease;
+}
+
+.socials-wrapper ul li:hover .fa-facebook {
+  color: #b8ffbb;
+  text-shadow: 0 0 15px #b8ffbb;
+  transition: all 0.2s ease;
+}
+
+/*twitter*/
+.socials-wrapper ul li:hover.envelope {
+  border: 5px solid #b8ffbb;
+  box-shadow: 0 0 15px #b8ffbb;
+  transition: all 0.2s ease;
+}
+
+.socials-wrapper ul li:hover .fa-envelope {
+  color: #b8ffbb;
+  text-shadow: 0 0 15px #b8ffbb;
+  transition: all 0.2s ease;
+}
+
+/* instagram */
+.socials-wrapper ul li:hover.instagram {
+  border: 5px solid #b8ffbb;
+  box-shadow: 0 0 15px #b8ffbb;
+  transition: all 0.2s ease;
+}
+
+.socials-wrapper ul li:hover .fa-instagram {
+  color: #b8ffbb;
+  text-shadow: 0 0 15px #b8ffbb;
+  transition: all 0.2s ease;
+}
+
+
+
+
+/* media queries */
+
+@media screen and (max-width: 640px){
+  .socials-wrapper {
+      width: 350px;
+  }
+  .socials-wrapper ul li{
+      margin-top: 10px;
+  }
+  .socials-wrapper ul li.google{
+      margin-left: 60px;
+  }
+}
+
+
+@media screen and (max-width: 340px){
+  .socials-wrapper {
+      width: 150px;
+  }
+  .socials-wrapper ul li{
+      margin:15px;
+  }
+  .socials-wrapper ul li.google{
+      margin-left: 15px;
+  }
+}
+
+
+
+
+/* youtube link */
+.youtube{
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 160px;
+  text-align: center;
+  padding: 15px 10px;
+  background: #bb0000;
+  border-radius: 5px;
+}
+
+.youtube a{
+  text-decoration: none;
+  color: #fff;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
