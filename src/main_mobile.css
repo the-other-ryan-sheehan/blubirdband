@@ -220,7 +220,7 @@ LEVEL 2. MENU STYLES
 }
 
 .js-menu_activated .hamburger:before{
-  width: 8vh;
+  width: 12vh;
   height: 100vh;
   transform: translate3d(-50vh, -50vh, 0) scale(5);
 }
