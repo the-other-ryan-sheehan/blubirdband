@@ -26,6 +26,17 @@ function updateContent(state) {
         $("#contact").fadeIn(2000);
 }
 
+function footerHandler(state) {
+    console.log('running');
+    console.log('footer: ' + state);
+    if(state == "start" || state =="home") {
+        $('#ryan_contact').fadeIn(2000);
+    }
+    else {
+        $('#ryan_contact').fadeOut(2000);
+    }
+}
+
 var Ribbon = /** @class */ (function () {
     function Ribbon(svg) {
         this.rootPos = Math.random() * 100;
@@ -92,7 +103,7 @@ var Ribbon = /** @class */ (function () {
                 id: '1',
                 title: 'Tour',
                 position: { current: 105, target: 5, home: 5 },
-                width: 10,
+                width: 13,
                 row: 2
             },
             {
@@ -100,7 +111,7 @@ var Ribbon = /** @class */ (function () {
                 id: '2',
                 title: 'About',
                 position: { current: 137, target: 27, home: 27 },
-                width: 12,
+                width: 14,
                 row: 3
             },
             {
@@ -108,7 +119,7 @@ var Ribbon = /** @class */ (function () {
                 title: 'Merch',
                 id: '3',
                 position: { current: 147, target: 47, home: 47 },
-                width: 13,
+                width: 14,
                 row: 1
             },
             {
@@ -116,7 +127,7 @@ var Ribbon = /** @class */ (function () {
                 id: '4',
                 title: 'Contact',
                 position: { current: 175, target: 75, home: 75 },
-                width: 15,
+                width: 17,
                 row: 2
             },
             {
@@ -376,6 +387,7 @@ var Ribbon = /** @class */ (function () {
         }
 
         console.log(newState.type);
+        footerHandler(newState.type);
         if (newState.type !== "home")
             $("#dark").addClass("darker-screen-override");
         else

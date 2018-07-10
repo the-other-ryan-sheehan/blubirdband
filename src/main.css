@@ -37,6 +37,7 @@ h1 {
 		font-size: 100vh;
 	}
 	.darker-screen {
+		
 	    background:rgba(0, 0, 0, 0.5);
 	    display: inline-block;
 	    height:100%;
@@ -104,6 +105,33 @@ h1 {
 		color: white;
 		font-size: 21px;
 	}
+	footer {
+		
+		position: absolute;
+   		width: 100%;
+   		bottom: 0;
+		color: white;
+    	padding: 25px 0;
+    	text-align: center;
+	}
+
+	footer span.copyright {
+    	text-transform: uppercase;
+    	text-transform: none;
+    	line-height: 40px;
+	}
+	footer ul.quicklinks {
+    	text-decoration: none;
+    	margin-bottom: 0;
+    	text-transform: uppercase;
+    	text-transform: none;
+    	line-height: 40px;
+	}
+
+	a {
+		color: white;
+	}
+
 
 }
 
