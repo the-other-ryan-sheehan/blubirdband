@@ -88,7 +88,9 @@
     </textPath>
 	</text>
 </svg>
-
+		<div class="front_page_degrees">
+			
+		</div>
 		<div class="front_page_content">
 			<img id="player" class="player" src="../src/tv_bars.jpg" alt="tv">				
 
@@ -176,15 +178,15 @@
 <script type="text/javascript">
 
 		var gooseman = document.querySelector('.gooseman');
-		var front_page = document.querySelector('.front_page_content');
+		var front_page_degrees = document.querySelector('.front_page_degrees');
 
 
 		function handleOrientation(event) {
 		  var x = event.beta;  // In degree in the range [-180,180]
 		  var y = event.gamma; // In degree in the range [-90,90]
 
-		  //front_page.innerHTML  = "beta : " + x + "\n";
-		  //front_page.innerHTML += "gamma: " + y + "\n";
+		  front_page_degrees.innerHTML  = "beta : " + x + "\n";
+		  front_page_degrees.innerHTML += "gamma: " + y + "\n";
 
 		  if (y > 10) {
 			gooseman.attr("src","../src/gooseman_right_1.png");
