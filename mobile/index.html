@@ -34,7 +34,10 @@
 			if(window.innerWidth <= 768) {isMobile = true;}
 			if (!isMobile) {window.location.href = "/";} //change url accordingly
 		}
-		$(window).resize(function() {whichLayout();});
+		$( document ).ready(function() {
+			whichLayout();
+			$(window).resize(function() {whichLayout();});
+		});
 	</script>
 </head>
 <body>
