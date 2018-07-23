@@ -1,0 +1,23 @@
+{
+  "name": "blubirdband",
+  "version": "1.0.0",
+  "description": "",
+  "main": "snap.svg-min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-other-ryan-sheehan/blubirdband.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/the-other-ryan-sheehan/blubirdband/issues"
+  },
+  "homepage": "https://github.com/the-other-ryan-sheehan/blubirdband#readme",
+  "dependencies": {
+    "stripe": "^6.3.0"
+  }
+}

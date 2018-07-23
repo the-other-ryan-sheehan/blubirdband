@@ -135,7 +135,7 @@ var Ribbon = /** @class */ (function () {
                 id: 'back',
                 title: '<-- Back',
                 position: { current: -100, target: -100, home: -100 },
-                width: 14,
+                width: 16,
                 row: 1
             }
         ];
