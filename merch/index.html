@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blubird</title>
+
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Favicon -->
+    <link rel="icon" href="blubird_head_favicon.ico?" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+
+     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="../src/ribbon.css">
+	<link rel="stylesheet" type="text/css" href="../src/socials.css">
+
+	<link rel="stylesheet" type="text/css" href="../src/main_mobile.css">
+	<link href='https://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+	<script src="../src/greensock-js-with-customease/src/minified/easing/CustomEase.min.js"></script>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.core.min.js"></script>
+	<script src="../snap.svg-min.js"></script>
+	<script type="text/javascript">
+		function whichLayout() {
+			var isMobile = false; //initiate as false
+			// device detection
+			if(window.innerWidth <= 768) {isMobile = true;}
+			if (!isMobile) {window.location.href = "/";} //change url accordingly
+		}
+		$(window).resize(function() {whichLayout();});
+	</script>
+	<style>
+		body {
+  background-color: #ff0055;
+  padding: 0;
+  margin:0;
+  overflow: hidden;
+  height: 100vh;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+#poly {
+  fill:transparent;
+  stroke:#00FF55;
+  stroke-width:2; 
+  stroke-linecap: round; 
+  stroke-linejoin: round;
+  
+}
+#waveform {
+  transform-origin: 50vw 50vh;
+  overflow: visible;
+}
+pattern {
+  
+}
+	</style>
+</head>
+<body>
+<svg>
+  <style type="text/css">
+	.st0{fill:url(#waveform);}
+</style>
+  <pattern patternUnits="userSpaceOnUse" width="100" height="100" id="waveform" style="">
+    <g id="poly" ></g>
+  </pattern>
+    <rect x="0" y="0" class="st0" width="1920" height="1080" />
+</svg>
+
+<pre class="output"></pre>
+
+		<header class="header">
+		  <div class="hamburger">
+		    <button class="button hamburger__button js-menu__toggle">
+		      <span class="hamburger__label">Open menu</span>
+		    </button>
+		  </div>
+		  <nav class="menu">
+		    <ul class="list menu__list">
+		      <li class="menu__group">
+		        <a href="#0" class="link menu__link">Tour</a>
+		      </li>
+		      <li class="menu__group">
+		        <a href="#0" class="link menu__link">About</a>
+		      </li>
+		      <li class="menu__group">
+		        <a href="#0" class="link menu__link">Merch</a>
+		      </li>
+		      <li class="menu__group">
+		        <a href="#0" class="link menu__link">Contact</a>
+		      </li>
+		    </ul>
+		  </nav>
+		</header>
+
+	<footer>
+		
+	</footer>
+	</div>
+<script type="text/javascript" charset="utf-8" async defer>
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var poly = document.getElementById("poly");
+
+var svgheight = 100;
+var svgwidth = 100;
+
+var buffersize = 256;
+
+var FakeWaveform = function () {
+  function FakeWaveform(size) {
+    var repeat = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+
+    _classCallCheck(this, FakeWaveform);
+
+    this.size = size;
+    this.buffer = new Float32Array(size);
+    this.time = 0;
+    this.repeat = repeat;
+    this.update();
+  }
+
+  _createClass(FakeWaveform, [{
+    key: "update",
+    value: function update() {
+      for (var i = 1; i < this.buffer.length; i++) {
+        this.buffer[i] = Math.cos(this.time + i) / (i % (this.size / this.repeat) * 0.05 + 1);
+      }
+      this.buffer[this.buffer.length - 1] = 0;
+      this.time += 0.1;
+    }
+  }]);
+
+  return FakeWaveform;
+}();
+
+var BufferDisplay = function () {
+  function BufferDisplay(width, height, divisions, buffer) {
+    _classCallCheck(this, BufferDisplay);
+
+    this.width = width;
+    this.height = height;
+    this.divisions = divisions;
+    this.buffer = buffer;
+    this.element = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+    this.drawBuffer();
+  }
+
+  _createClass(BufferDisplay, [{
+    key: "updateBuffer",
+    value: function updateBuffer(buffer) {
+      this.buffer = buffer;
+    }
+  }, {
+    key: "drawBuffer",
+    value: function drawBuffer() {
+      var offset = Math.floor(this.buffer.length / this.divisions);
+      var points = "";
+      for (var i = 0; i < this.divisions; i++) {
+        points += this.width / this.divisions * i + "," + (this.height / 2 + this.buffer[offset * i] * (this.height / 2)) + " ";
+      }
+      this.element.setAttribute("points", points);
+    }
+  }]);
+
+  return BufferDisplay;
+}();
+
+var fake = new FakeWaveform(buffersize, 2);
+var buf = new BufferDisplay(svgwidth, svgheight, 64, fake.buffer);
+
+poly.appendChild(buf.element);
+
+window.requestAnimationFrame(draw);
+
+function draw() {
+  fake.update(2);
+  buf.updateBuffer(fake.buffer);
+  buf.drawBuffer();
+  window.requestAnimationFrame(draw);
+}
+
+var waveform = document.getElementById("waveform");
+
+window.addEventListener("mousemove", function (e) {
+  waveform.setAttribute("patternTransform", "rotate(" + e.pageY / window.innerHeight * 360 + ") translate(" + e.pageX + " " + e.pageY + ")  scale(" + e.pageX / window.innerWidth * 2 + ")");
+});
+
+window.addEventListener("touchmove", function (t) {
+  var touchList = t.changedTouches;
+  var e = touchList.item(0);
+  waveform.setAttribute("patternTransform", "rotate(" + e.pageY / window.innerHeight * 360 + ") translate(" + e.pageX + " " + e.pageY + ")  scale(" + e.pageX / window.innerWidth * 2 + ")");
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blubird</title>
+
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Favicon -->
+    <link rel="icon" href="blubird_head_favicon.ico?" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+
+     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="../src/ribbon.css">
+	<link rel="stylesheet" type="text/css" href="../src/socials.css">
+
+	<link rel="stylesheet" type="text/css" href="../src/main_mobile.css">
+	<link href='https://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+	<script src="../src/greensock-js-with-customease/src/minified/easing/CustomEase.min.js"></script>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.core.min.js"></script>
+	<script src="../snap.svg-min.js"></script>
+	<script type="text/javascript">
+		function whichLayout() {
+			var isMobile = false; //initiate as false
+			// device detection
+			if(window.innerWidth <= 768) {isMobile = true;}
+			if (!isMobile) {window.location.href = "/";} //change url accordingly
+		}
+		$(window).resize(function() {whichLayout();});
+	</script>
+</head>
+<body>
+		<div id="dark" class="darker-screen-override darker-screen">
+		<svg id="header" viewBox="-30 90 100 30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+
+			    <filter id="f1" x="0" y="0" width="200%" height="200%">
+      <feOffset id="shadow" result="offOut" in="SourceGraphic" dx="8" dy="3" />
+      <feColorMatrix result="matrixOut" in="offOut" type="matrix"
+      values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" />
+      <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="1" />
+      
+      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+      <animate 
+      xlink:href="#shadow"
+      id="anim-float-forwards" 
+      attributeName="dx"
+      values="8;6;8"
+      keySplines="
+            0.1 0.8 0.2 1;
+            0.1 0.8 0.2 1"
+      dur="8s"
+      begin="0s"
+      repeatCount="indefinite"
+    />
+          <animate 
+      xlink:href="#shadow"
+      id="anim-float-forwards" 
+      attributeName="dy"
+      values="3;4;2;5;3"
+      keySplines="
+            0.1 0.8 0.2 1;
+            0.1 0.8 0.2 1;
+            0.1 0.8 0.2 1;
+            0.1 0.8 0.2 1"
+      dur="16s"
+      begin="0s"
+      repeatCount="indefinite"
+    />
+
+
+	</filter>
+ 	<path id="path">
+		<animate attributeName="d" from="m0,110 h0" to="m0,110 h11000" dur="220.8s" begin="0s" fill="freeze"/>
+	</path>
+	<text filter="url(#f1)" font-size="20" font-family="Amatic SC" fill='hsla(36, 95%, 85%, 1)'>
+		<textPath xlink:href="#path">blubird
+    </textPath>
+	</text>
+</svg>
+
+		<div class="front_page_content">
+			<img id="player" class="gif_player" src="../src/old_animation.gif" alt="animation">
+				
+				<svg id="squiggle_channel_1" class="static_squiggle_svg"> 
+					<defs>
+						<pattern id="Pattern" x="0" y="0" width="1" height="1">
+    					  <rect x="0" y="0" width="42.8" height="500" fill="white"/>
+    					  <rect x="42.8" y="0" width="42.8" height="500" fill="yellow"/>
+    					  <rect x="85.6" y="0" width="42.8" height="500" fill="cyan"/>
+    					  <rect x="128.4" y="0" width="42.8" height="500" fill="green"/>
+    					  <rect x="171.2" y="0" width="42.8" height="500" fill="magenta"/>
+    					  <rect x="214" y="0" width="42.8" height="500" fill="red"/>
+    					  <rect x="256.8" y="0" width="42.8" height="500" fill="blue"/>
+    					</pattern>
+  					</defs>
+				  
+				  <g id="wave1" fill="none">    
+				    <line id="line" x1="0" x2="50%" />
+				    <polyline id="wave1stroke" class="waves"/>
+				  </g>
+				   
+				  <g id="wave2" fill="none">    
+				  <line id="line" x1="30" x2="50%" />
+				  <polyline id="wave2stroke" class="waves"/>
+				  </g>
+				  <g id="wave3" fill="none">    
+				  <line id="line" x1="60" x2="50%" />
+				  <polyline id="wave3stroke" class="waves"/>
+				  </g>
+
+				  <g id="wave4" fill="none">    
+				  <line id="line" x1="30" x2="50%" />
+				  <polyline id="wave4stroke" class="waves"/>
+				  </g>
+				  <g id="wave5" fill="none">    
+				  <line id="line" x1="60" x2="50%" />
+				  <polyline id="wave5stroke" class="waves"/>
+				  </g>
+
+				  <g id="wave6" fill="none">    
+				  <line id="line" x1="30" x2="50%" />
+				  <polyline id="wave6stroke" class="waves"/>
+				  </g>
+				  <g id="wave7" fill="none">    
+				  <line id="line" x1="60" x2="50%" />
+				  <polyline id="wave7stroke" class="waves"/>
+				  </g>
+
+
+				</svg>
+							
+
+			<div id="static_box" class="static_box">
+
+				<img class="static" width="100%" height="100%" src="../src/tv_static.gif" alt="static">
+			</div>
+
+  			<img class="gooseman" src="../src/gooseman_front.png" alt="gooseman">
+  			<div class="dial_1"></div>
+  			<div class="dial_2"></div>
+  			<img id="tv_controller" class="tv" src="../src/tv_blubird_1_1.png" alt="tv">
+		</div>
+
+<pre class="output"></pre>
+
+		<header class="header">
+		  <div class="hamburger">
+		    <button class="button hamburger__button js-menu__toggle">
+		      <span class="hamburger__label">Open menu</span>
+		    </button>
+		  </div>
+		  <nav class="menu">
+		    <ul class="list menu__list">
+		      <li class="menu__group">
+		        <a href="#0" class="link menu__link">Tour</a>
+		      </li>
+		      <li class="menu__group">
+		        <a href="#0" class="link menu__link">About</a>
+		      </li>
+		      <li class="menu__group">
+		        <a href="#0" class="link menu__link">Merch</a>
+		      </li>
+		      <li class="menu__group">
+		        <a href="#0" class="link menu__link">Contact</a>
+		      </li>
+		    </ul>
+		  </nav>
+		</header>
+
+	<footer>
+		
+	</footer>
+	</div>
+
+
+<script type="text/javascript">
+	(function(){
+  		'use strict';
+		
+  		class Component {
+  		      
+  		  printError(error) {
+  		    return console.log(error);
+  		  }    
+  		  
+  		  toggleСlass(node, className) {
+  		    return  node.classList.toggle(className);
+  		  }    
+  		}
+  		
+  		class Menu extends Component {
+  		  constructor(settings) {
+  		    super();
+  		    this.nodeMenu = settings.nodeMenu;
+  		    this.stateErrorHint = settings.stateErrorHint || 'activeClassName is not a string';
+  		  }
+  		  
+  		  toggleState(stateClassName) {      
+  		    
+  		    if (typeof stateClassName !== 'string') return super.printError(this.stateErrorHint);
+  		    
+  		    return super.toggleСlass(this.nodeMenu, stateClassName);
+  		  }
+  		}
+		
+  		let nodeJSMenu = document.querySelector('body');
+  		
+  		let demoMenu = new Menu ({
+  		  nodeMenu: nodeJSMenu
+  		});
+  		
+  		nodeJSMenu.querySelector('.js-menu__toggle').addEventListener('click', function() {
+  		  demoMenu.toggleState('js-menu_activated');
+  		});
+	})();
+</script>
+<script type="text/javascript">
+		
+		var ball   = document.querySelector('.ball');
+		var garden = document.querySelector('.garden');
+		var output = document.querySelector('.output');
+
+		var maxX = garden.clientWidth  - ball.clientWidth;
+		var maxY = garden.clientHeight - ball.clientHeight;
+
+		function handleOrientation(event) {
+		  var x = event.beta;  // In degree in the range [-180,180]
+		  //var y = event.gamma; // In degree in the range [-90,90]
+
+		  output.innerHTML  = "beta : " + x + "\n";
+		  //output.innerHTML += "gamma: " + y + "\n";
+
+		  // Because we don't want to have the device upside down
+		  // We constrain the x value to the range [-90,90]
+		  if (x >  90) { x =  90};
+		  if (x < -90) { x = -90};
+
+		  // To make computation easier we shift the range of 
+		  // x and y to [0,180]
+		  x += 90;
+		  //y += 90;
+
+		  // 10 is half the size of the ball
+		  // It center the positioning point to the center of the ball
+		  ball.style.top  = (maxX*x/180 - 10) + "px";
+		  //ball.style.left = (maxY*y/180 - 10) + "px";
+		}
+
+		window.addEventListener('deviceorientation', handleOrientation);
+</script>
+<script type="text/javascript" charset="utf-8">
+
+var waves = []
+var getWaves = $('.waves').map(function(i,e) {
+    console.log(e);
+    waves.push($(e));
+});
+console.log(waves);
+
+// TweenLite.defaultEase = Sine.easeInOut;
+TweenLite.defaultEase = Linear.easeNone;
+TweenLite.set("g", { y: window.innerHeight / 3 });
+
+var svg = document.querySelector("svg");
+var $wave = document.querySelector("[id=wave]");
+
+var contour1 = new CustomEase("contour1", "M0,0 C0.4,0 0.3,1 0.5,1 0.7,1 0.6,0 1,0");
+var contour2 = new CustomEase("contour2", "M0,0,C0,0,0.5,1,0.5,1,0.5,1,1,0,1,0");
+var contour3 = new CustomEase("contour3", "M0,0,C0,0.302,0,1,0.2,1,0.4,1,0.6,0,1,0");
+
+var width = 360;
+var segments = 300;
+var interval = width / segments;
+
+var wave = {
+  amplitude: 0,
+  frequency: 1,
+  points: []
+};
+
+waves.forEach((item) => {
+
+console.log(item[0]);
+
+for (var i = 0; i <= segments; i++) {
+  
+  var period = i / segments;
+  var point = item[0].points.appendItem(svg.createSVGPoint());
+
+  point.x = i * interval;
+  point.y = 0;
+  
+  wave.points.push({
+    ratio: 0,
+    period: period,
+    point: point,
+    update: function() {
+      var cycle  = Math.sin(this.period * wave.frequency * Math.PI * 2);
+      var height = this.ratio * wave.amplitude / 2;
+      this.point.y = cycle * height;
+    }
+  }); 
+}
+update();
+
+});
+$("#wave2").attr("transform","matrix(1,0,0,1,51.4,141.75)");
+$("#wave3").attr("transform","matrix(1,0,0,1,102.8,141.75)");
+$("#wave4").attr("transform","matrix(1,0,0,1,154.2,141.75)");
+$("#wave5").attr("transform","matrix(1,0,0,1,205.6,141.75)");
+$("#wave6").attr("transform","matrix(1,0,0,1,257,141.75)");
+$("#wave7").attr("transform","matrix(1,0,0,1,308.4,141.75)");
+
+
+var tl1 = new TimelineMax({ repeat: -1, yoyo: true })
+  .to(wave, 1, { amplitude: 200, repeat: 1, yoyo: true })
+  .to(wave, 0.5, { amplitude: 150, repeat: 1, yoyo: true })
+  .to(wave, 1, { amplitude: 300, repeat: 1, yoyo: true })
+
+var tl2 = new TimelineMax({ repeat: -1, yoyo: true })
+  .to(wave, 2, { frequency: 15 })
+  .to(wave, 2, { frequency: 5 }, "+=1")
+  .to(wave, 2, { frequency: 10 }, "+=1")
+
+var tl3 = new TimelineMax({ repeat: -1, yoyo: true })
+  .to(wave.points, 2, {
+    ratio: function(i, point) {
+      return contour1.getRatio(point.period)
+    }
+  })
+  .to(wave.points, 2, {
+    ratio: function(i, point) {
+      return contour2.getRatio(point.period)
+    }
+  })
+  .to(wave.points, 2, {
+    ratio: function(i, point) {
+      return contour3.getRatio(point.period)
+    }
+  })
+  .to(wave.points, 2, {
+    ratio: function(i, point) {
+      
+      var period = 1;
+      
+      // Constrain the contour to the first 25%
+      if (point.period <= 0.25) {
+        period = map(point.period, 0, 0.25, 0, 1);
+      }
+      
+      return contour1.getRatio(period);
+    }
+  })
+  .to(wave.points, 1, {
+    ratio: function(i, point) {
+      
+      // No wave
+      return 0;
+    }
+  })
+  .to(wave.points, 2, {
+    ratio: function(i, point) {
+      
+      // Reverse of contour3.getRatio(point.period);
+      return contour3.getRatio(1 - point.period);
+    }
+  })
+  .to(wave.points, 2, {
+    ratio: function(i, point) {
+      
+      // Slope down
+      return 1 - point.period;
+    }
+  })
+  .to(wave.points, 2, {
+    ratio: function(i, point) {
+      
+      // Slope up
+      return point.period;
+    }
+  })
+
+TweenLite.ticker.addEventListener("tick", update);
+
+/**
+ * @param {number} x value to map
+ * @param {number} a source min value
+ * @param {number} b source max value
+ * @param {number} c destination min value
+ * @param {number} d destination max value
+ */
+function map(x, a, b, c, d) {
+  return c + (d - c) * ((x - a) / (b - a)) || 0;
+}
+
+function update() {
+    
+  var len = wave.points.length;
+    
+  for (var i = 0; i < len; i++) {
+    wave.points[i].update();
+  }
+}
+
+
+var dial_1_position = 1;
+var dial_2_position = 1;
+$(".dial_1").click(function(e) {
+	
+	console.log(dial_1_position)
+	dial_1_position = (dial_1_position%3)+1;
+	changeChannel(dial_1_position, dial_2_position);
+	tuneDial1(dial_1_position);
+
+	
+});
+$(".dial_2").click(function(e) {
+	console.log(dial_2_position)
+	dial_2_position = (dial_2_position%3)+1;
+	changeChannel(dial_1_position, dial_2_position);
+	tuneDial2(dial_2_position);
+	
+});
+function tuneDial1(dial_pos) {
+	$("#player").clearQueue();
+  	$("#player").stop();
+	$("#static_box").clearQueue();
+  	$("#static_box").stop();
+
+	if (dial_pos == 1) {
+		var player_new_src = "../src/old_animation.gif";
+		$("#player").attr("src",player_new_src);
+
+	}
+	if (dial_pos == 2) {
+		var player_new_src = "../src/babbish.gif";
+		$("#player").attr("src",player_new_src);
+
+	}
+	if (dial_pos == 3) {
+		var player_new_src = "../src/sides.gif";
+		$("#player").attr("src",player_new_src);
+
+	}
+}
+function tuneDial2(dial_pos) {
+	var static_animation;
+
+	if (dial_2_position == 1) {
+		$("#player").delay(300).attr("src",player_new_src);
+		tuneDial1(dial_1_position);
+		$("#static_box").removeClass("turn_off").fadeIn(1500);
+	}
+	if (dial_2_position == 2) {
+		$("#squiggle_channel_1").toggle();
+	}
+	if (dial_2_position == 3) {
+		$("#squiggle_channel_1").toggle();
+
+		$("#static_box").addClass("turn_off").fadeOut(2000);
+		
+
+		var player_new_src = "../src/turn_off.gif";
+		$("#player").delay(300).attr("src",player_new_src);
+		$("#player").delay(7000).queue(function(next) { $(this).attr("src","../src/tv_bars.jpg")});
+		console.log(static_animation);
+
+	}
+}
+function changeChannel(dial_1, dial_2) {
+
+	var tv_new_src = "../src/tv_blubird_"+dial_1+"_"+dial_2+".png";
+	console.log(tv_new_src);
+
+	$("#tv_controller").attr("src",tv_new_src);
+
+	
+
+
+	
+}
+
+</script>
+</body>
+</html>
