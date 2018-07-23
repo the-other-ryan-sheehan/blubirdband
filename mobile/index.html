@@ -98,7 +98,7 @@
 				<img class="static" width="100%" height="100%" src="../src/tv_static.gif" alt="static">
 			</div>
 
-  			<img class="gooseman" src="../src/gooseman_front.png" alt="gooseman">
+  			<img id="gooseman" class="gooseman" src="../src/gooseman_front.png" alt="gooseman">
   			<img id="tv_controller" class="tv" src="../src/tv_blubird_1_1.png" alt="tv">
 		</div>
 
@@ -187,17 +187,20 @@
 
 		  //front_page_degrees.innerHTML  = "beta : " + x + "\n";
 		  front_page_degrees.innerHTML = "gamma: " + y + "\n";
+		  front_page_degrees.innerHTML += "triggered: " + triggered + "\n";
 
-		  if (y > 10 && y <= 40) {
-			gooseman.toggle();
+		  var triggered = false;
+		  if (y > 10 && y <= 40 && !triggered) {
+			$("#gooseman").toggle();
+			triggered = true;
 			//attr("src","../src/gooseman_right_1.png");
 		  }
 		  if (y > 40 && y <= 70) {
-			gooseman.toggle();
+			//$("#gooseman").toggle();
 			//attr("src","../src/gooseman_right_2.png");
 		  }
 		  if (y > 70) {
-			gooseman.toggle();
+			//$("#gooseman").toggle();
 			//attr("src","../src/gooseman_right_3.png");  	
 		  }
 		  
