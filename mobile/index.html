@@ -189,13 +189,16 @@
 		  front_page_degrees.innerHTML += "gamma: " + y + "\n";
 
 		  if (y > 10) {
-			gooseman.attr("src","../src/gooseman_right_1.png");
+			gooseman.toggle();
+			//attr("src","../src/gooseman_right_1.png");
 		  }
 		  if (y > 40 && y < 70) {
-			gooseman.attr("src","../src/gooseman_right_2.png");
+			gooseman.toggle();
+			//attr("src","../src/gooseman_right_2.png");
 		  }
 		  if (y > 70) {
-			gooseman.attr("src","../src/gooseman_right_3.png");  	
+			gooseman.toggle();
+			//attr("src","../src/gooseman_right_3.png");  	
 		  }
 		  
 		  
