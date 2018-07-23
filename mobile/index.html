@@ -184,12 +184,12 @@
 		function handleOrientation(event) {
 		  //var x = event.beta;  // In degree in the range [-180,180]
 		  var y = event.gamma; // In degree in the range [-90,90]
-
+		  var triggered = false;
 		  //front_page_degrees.innerHTML  = "beta : " + x + "\n";
 		  front_page_degrees.innerHTML = "gamma: " + y + "\n";
 		  front_page_degrees.innerHTML += "triggered: " + triggered + "\n";
 
-		  var triggered = false;
+		  
 		  if (y > 10 && y <= 40 && !triggered) {
 			$("#gooseman").toggle();
 			triggered = true;
