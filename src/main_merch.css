@@ -34,7 +34,8 @@ pattern {
   
 }
 div.page_layout {
-  overflow: scroll;
+  overflow-y: scroll;
+   -webkit-overflow-scrolling: touch;
   position:absolute;
   z-index:11;
   width:100%;
