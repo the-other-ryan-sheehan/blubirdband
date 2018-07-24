@@ -43,9 +43,10 @@ div.products_container {
 
 }
 div.products_layout {
-padding-top:90px;
+  padding-top:50px;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 div.product {
   margin-top: 30px;
@@ -66,6 +67,9 @@ div.product {
 }
 .gameboy2 {
   background-image: url('../src/gameboy_background_2.png');
+}
+.gameboy3 {
+  background-image: url('../src/gameboy_background_3.png');
 }
 
 div.product:hover{
@@ -161,7 +165,7 @@ LEVEL 2. MENU STYLES
   box-sizing: border-box;
   width: 100%;
   color: var(--colorWhite);
-
+  overflow: hidden;
   display: flex;
   justify-content: center;
 
@@ -354,14 +358,6 @@ LEVEL 3. MOBILE ANIMATION STYLES
 
 
 
-body{
-  font-size: 1.6rem;
-  color: var(--colorBlack);*/
-
-  margin: 0;
-  -webkit-overflow-scrolling: touch;   
-}
-
 :root{
   --colorBlack: #222;
   --colorWhite: #fff;
@@ -381,9 +377,10 @@ body{
     height:100%;
   }
   div.products_container {
-    padding-top:90px;
+    padding-top:30px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
   
   }
   div.products_layout {
