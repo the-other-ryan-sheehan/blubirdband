@@ -73,77 +73,26 @@
 </svg>
 
 
+	<footer id="ryan_contact">
+				<div class="footer-container">
+				    <div class="row">
+				      <!-- Left hand most side -->
+					<div class="col-md-4">
+					    <span class="copyright">Copyright &copy; Ryan Sheehan <script>new Date().getFullYear()>2010&&document.write(new Date().getFullYear());</script></span>
+					</div>
 
-
-		<header class="header">
-		  <div class="hamburger">
-		    <button class="button hamburger__button js-menu__toggle">
-		      <span class="hamburger__label">Open menu</span>
-		    </button>
-		  </div>
-		  <nav class="menu">
-		    <ul class="list menu__list">
-		      <li class="menu__group">
-		        <a href="/" class="link menu__link">Home</a>
-		      </li>
-		      <li class="menu__group">
-		        <a href="#0" class="link menu__link">Tour</a>
-		      </li>
-		      <li class="menu__group">
-		        <a href="#0" class="link menu__link">About</a>
-		      </li>
-		      <li class="menu__group">
-		        <a href="#0" class="link menu__link">Contact</a>
-		      </li>
-		    </ul>
-		  </nav>
-		</header>
-
-	<footer>
-		
+					<!-- On the right side, linkable mailto: -->
+					<div class="col-md-4 offset-md-4">
+					    <ul class="list-inline quicklinks">
+						<li><a href="mailto:rsheeh03@tufts.edu">rsheeh03@tufts.edu</a>
+						</li>
+					    </ul>
+					</div>
+				    </div>
+				</div>
 	</footer>
 	</div>
-	<script type="text/javascript">
-	(function(){
-  		'use strict';
-		
-  		class Component {
-  		      
-  		  printError(error) {
-  		    return console.log(error);
-  		  }    
-  		  
-  		  toggleСlass(node, className) {
-  		    return  node.classList.toggle(className);
-  		  }    
-  		}
-  		
-  		class Menu extends Component {
-  		  constructor(settings) {
-  		    super();
-  		    this.nodeMenu = settings.nodeMenu;
-  		    this.stateErrorHint = settings.stateErrorHint || 'activeClassName is not a string';
-  		  }
-  		  
-  		  toggleState(stateClassName) {      
-  		    
-  		    if (typeof stateClassName !== 'string') return super.printError(this.stateErrorHint);
-  		    
-  		    return super.toggleСlass(this.nodeMenu, stateClassName);
-  		  }
-  		}
-		
-  		let nodeJSMenu = document.querySelector('body');
-  		
-  		let demoMenu = new Menu ({
-  		  nodeMenu: nodeJSMenu
-  		});
-  		
-  		nodeJSMenu.querySelector('.js-menu__toggle').addEventListener('click', function() {
-  		  demoMenu.toggleState('js-menu_activated');
-  		});
-	})();
-</script>
+	
 <script type="text/javascript" charset="utf-8" async defer>
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
