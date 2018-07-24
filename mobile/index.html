@@ -119,7 +119,7 @@
 		        <a href="#0" class="link menu__link">About</a>
 		      </li>
 		      <li class="menu__group">
-		        <a href="#0" class="link menu__link">Merch</a>
+		        <a href="/merch" class="link menu__link">Merch</a>
 		      </li>
 		      <li class="menu__group">
 		        <a href="#0" class="link menu__link">Contact</a>
@@ -189,24 +189,14 @@
 		  front_page_degrees.innerHTML = "gamma: " + y + "\n";
 		  front_page_degrees.innerHTML += "state: " + state + "\n";
 
-		  if (y < -21) {state = -3;}
-		  if (y < -14 && y >= -21) {state = -2;}
-		  if (y < -7 && y >= -14) {state = -1;}
+
 		  if (y > -7 && y < 7) {state = 0;}
 		  if (y > 7 && y <= 14) {state = 1;}
 		  if (y > 14 && y <= 21) {state = 2;}
 		  if (y > 21) {state = 3;}
 		  		  
 		  switch (state) {
-		  	case -3:
-		  		$("#gooseman").attr("src","../src/gooseman_left_3.png");
-		  		break;
-		  	case -2:
-		  		$("#gooseman").attr("src","../src/gooseman_left_2.png");
-		  		break;
-		  	case -1:
-		  		$("#gooseman").attr("src","../src/gooseman_left_1.png");
-		  		break;
+
 		  	case 0:
 		  		$("#gooseman").attr("src","../src/gooseman_front.png");
 		  		break;
