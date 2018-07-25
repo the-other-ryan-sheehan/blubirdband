@@ -10,9 +10,10 @@ body {
   position:relative;
 }
 footer {
-    display:none;
-  }
+  display:none;
+}
 svg {
+  overflow: hidden;
   position:absolute;
   width: 100%;
   height: 100%;
@@ -42,7 +43,8 @@ div.page_layout {
   height:100%;
 }
 div.products_container {
-  
+  margin-top: 40px;
+  margin-bottom: 100px;
 
 }
 div.products_layout {
@@ -53,8 +55,7 @@ div.products_layout {
 }
 div.product {
   margin-top: 30px;
-  margin-right: 50px;
-  margin-left: 50px;
+  margin: 0 auto;
   margin-bottom: 30px;
   padding: 20px 0px 10px 16px;
   height: 410px;
@@ -73,6 +74,12 @@ div.product {
 }
 .gameboy3 {
   background-image: url('../src/gameboy_background_3.png');
+}
+.gameboy4 {
+  background-image: url('../src/gameboy_background_4.png');
+}
+.gameboy5 {
+  background-image: url('../src/gameboy_background_5.png');
 }
 
 div.product:hover{
@@ -137,6 +144,17 @@ img {
     justify-content: center;
     height:100%;
     width:100;
+}
+div.product {
+  margin-top: 30px;
+  margin-right: 48px;
+  margin-left: 48px;
+  margin-bottom: 30px;
+  padding: 20px 0px 10px 16px;
+  height: 410px;
+  width:290px;
+  background-color: white;
+  border-radius: 10px;
 }
 footer {
   display:inline;

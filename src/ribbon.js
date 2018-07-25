@@ -20,11 +20,12 @@ function updateContent(state) {
     }
     else if (state == "about")
         $("#about").fadeIn(2000);
-    else if (state == "merch") 
+    else if (state == "merch") {
             function pageRedirect() {
                 window.location.replace("http://blubirdband.com/merch");
             }      
-            setTimeout("pageRedirect()", 2000);
+            setTimeout(pageRedirect(), 2000);
+        }
     else if (state == "contact") 
         $("#contact").fadeIn(2000);
 }
