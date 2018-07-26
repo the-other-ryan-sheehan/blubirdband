@@ -105,9 +105,23 @@ img {
   background-size: 200% auto;
   color: white;
  /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
-  box-shadow: 0 0 20px #eee;
+  /*box-shadow: 0 0 20px #eee;*/
   border-radius: 10px;
+}
+.btn1 {
+  background-image: linear-gradient(to right, #ffecd2 0%, #f6d365 51%, #ffecd2 100%);
+}
+.btn2 {
   background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+}
+.btn3 {
+    background-image: linear-gradient(to right, #fda085 0%, #FF5A6E 51%, #fda085 100%);
+}
+.btn4 {
+  background-image: linear-gradient(to right, #FF5A6E 0%, #DDA0DD 51%, #FF5A6E 100%);
+}
+.btn5 {
+  background-image: linear-gradient(to right, #DDA0DD 0%, #a6c1ee 51%, #DDA0DD 100%);
 }
 
 .btn:hover {
