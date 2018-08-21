@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blubird</title>
+
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Favicon -->
+    <link rel="icon" href="blubird_head_favicon.ico?" type="image/x-icon">
+
+     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="src/ribbon.css">
+	<link rel="stylesheet" type="text/css" href="src/socials.css">
+
+	<link rel="stylesheet" type="text/css" href="src/main_mobile.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.core.min.js"></script>
+	<script src="snap.svg-min.js"></script>
+	<script type="text/javascript">
+		function whichLayout() {
+			var isMobile = false; //initiate as false
+			// device detection
+			if(window.innerWidth <= 768) {isMobile = true;}
+			if (!isMobile) {window.location.href = "file:///Users/ryansheehan/mywebsites/blubirdband/index.html";} //change url accordingly
+		}
+		$(window).resize(function() {whichLayout();});
+	</script>
+</head>
+<body>
+		<div id="dark" class="darker-screen-override darker-screen">
+		<h1>Blubird</h1>
+
+
+
+		<header class="header">
+		  <div class="hamburger">
+		    <button class="button hamburger__button js-menu__toggle">
+		      <span class="hamburger__label">Open menu</span>
+		    </button>
+		  </div>
+		  <nav class="menu">
+		    <ul class="list menu__list">
+		      <li class="menu__group">
+		        <a href="#0" class="link menu__link">Tour</a>
+		      </li>
+		      <li class="menu__group">
+		        <a href="#0" class="link menu__link">About</a>
+		      </li>
+		      <li class="menu__group">
+		        <a href="#0" class="link menu__link">Merch</a>
+		      </li>
+		      <li class="menu__group">
+		        <a href="#0" class="link menu__link">Contact</a>
+		      </li>
+		    </ul>
+		  </nav>
+		</header>
+
+	<footer>
+		
+	</footer>
+	</div>
+
+
+<script type="text/javascript">
+	(function(){
+  		'use strict';
+		
+  		class Component {
+  		      
+  		  printError(error) {
+  		    return console.log(error);
+  		  }    
+  		  
+  		  toggleСlass(node, className) {
+  		    return  node.classList.toggle(className);
+  		  }    
+  		}
+  		
+  		class Menu extends Component {
+  		  constructor(settings) {
+  		    super();
+  		    this.nodeMenu = settings.nodeMenu;
+  		    this.stateErrorHint = settings.stateErrorHint || 'activeClassName is not a string';
+  		  }
+  		  
+  		  toggleState(stateClassName) {      
+  		    
+  		    if (typeof stateClassName !== 'string') return super.printError(this.stateErrorHint);
+  		    
+  		    return super.toggleСlass(this.nodeMenu, stateClassName);
+  		  }
+  		}
+		
+  		let nodeJSMenu = document.querySelector('body');
+  		
+  		let demoMenu = new Menu ({
+  		  nodeMenu: nodeJSMenu
+  		});
+  		
+  		nodeJSMenu.querySelector('.js-menu__toggle').addEventListener('click', function() {
+  		  demoMenu.toggleState('js-menu_activated');
+  		});
+	})();
+
+	
+</script>
+</body>
+</html>
